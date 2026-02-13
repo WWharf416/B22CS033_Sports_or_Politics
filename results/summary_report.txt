@@ -1,0 +1,63 @@
+================================================================================
+SPORT vs POLITICS TEXT CLASSIFICATION - SUMMARY REPORT
+================================================================================
+
+BEST OVERALL MODEL
+--------------------------------------------------------------------------------
+Feature Method: Bag of Words (Unigrams)
+Model: Naive Bayes
+Accuracy: 1.0000
+Precision: 1.0000
+Recall: 1.0000
+F1-Score: 1.0000
+Training Time: 0.00 seconds
+
+BEST MODEL FOR EACH FEATURE METHOD
+--------------------------------------------------------------------------------
+
+Bag of Words (Unigrams):
+  Model: Naive Bayes
+  Accuracy: 1.0000
+  F1-Score: 1.0000
+
+TF-IDF (Unigrams):
+  Model: Naive Bayes
+  Accuracy: 1.0000
+  F1-Score: 1.0000
+
+TF-IDF (Unigrams + Bigrams):
+  Model: Naive Bayes
+  Accuracy: 1.0000
+  F1-Score: 1.0000
+
+TF-IDF (Unigrams + Bigrams + Trigrams):
+  Model: Naive Bayes
+  Accuracy: 1.0000
+  F1-Score: 1.0000
+
+
+TOP 5 MODELS (by Accuracy)
+--------------------------------------------------------------------------------
+
+1. Naive Bayes (Bag of Words (Unigrams))
+   Accuracy: 1.0000, F1-Score: 1.0000
+
+6. Naive Bayes (TF-IDF (Unigrams))
+   Accuracy: 1.0000, F1-Score: 1.0000
+
+7. Logistic Regression (TF-IDF (Unigrams))
+   Accuracy: 1.0000, F1-Score: 1.0000
+
+8. SVM (Linear) (TF-IDF (Unigrams))
+   Accuracy: 1.0000, F1-Score: 1.0000
+
+11. Naive Bayes (TF-IDF (Unigrams + Bigrams))
+   Accuracy: 1.0000, F1-Score: 1.0000
+
+
+STATISTICS
+--------------------------------------------------------------------------------
+Average Accuracy: 0.9882
+Std Dev Accuracy: 0.0298
+Average F1-Score: 0.9879
+Std Dev F1-Score: 0.0307
