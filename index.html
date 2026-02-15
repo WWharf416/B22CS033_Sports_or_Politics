@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport vs Politics Text Classification | ML Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Sport vs Politics Classifier</div>
+            <ul class="nav-menu">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#code">Code</a></li>
+                <li><a href="#report">Report</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Sport vs Politics Text Classification</h1>
+                <p class="hero-subtitle">Achieving 100% Accuracy with Machine Learning</p>
+                <p class="hero-author">By Maulik Desai | Roll No: B22CS033</p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/WWharf416/B22CS033_Sports_or_Politics" class="btn btn-primary" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                    <a href="#report" class="btn btn-secondary">Read Full Report</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Best Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">928</div>
+                    <div class="stat-label">Articles Analyzed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">ML Models Tested</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98.82%</div>
+                    <div class="stat-label">Average Accuracy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Problem Statement</h3>
+                    <p>This project develops an automated system to classify news articles into two categories: <strong>Sport</strong> and <strong>Politics</strong>. Using machine learning techniques, the system can accurately predict the category of any news article based on its textual content.</p>
+                    
+                    <h3>Why This Matters</h3>
+                    <ul>
+                        <li><strong>News Aggregation:</strong> Automatically organize articles by topic</li>
+                        <li><strong>Content Recommendation:</strong> Suggest relevant articles to users</li>
+                        <li><strong>Media Monitoring:</strong> Track coverage across different categories</li>
+                        <li><strong>Digital Archives:</strong> Automatically catalog documents</li>
+                    </ul>
+
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>✅ <strong>Perfect Classification:</strong> 11 out of 20 model-feature combinations achieved 100% accuracy</li>
+                        <li>✅ <strong>Multiple Approaches:</strong> Compared Bag of Words, TF-IDF, and N-gram features</li>
+                        <li>✅ <strong>Diverse Models:</strong> Tested Naive Bayes, Logistic Regression, SVM, Random Forest, and KNN</li>
+                        <li>✅ <strong>Production Ready:</strong> Fast inference time (under 3ms) with perfect accuracy</li>
+                    </ul>
+                </div>
+                <div class="content-sidebar">
+                    <div class="info-box">
+                        <h4>Quick Facts</h4>
+                        <dl>
+                            <dt>Dataset</dt>
+                            <dd>BBC News Dataset</dd>
+                            
+                            <dt>Categories</dt>
+                            <dd>Sport, Politics</dd>
+                            
+                            <dt>Best Model</dt>
+                            <dd>Naive Bayes + TF-IDF</dd>
+                            
+                            <dt>Training Time</dt>
+                            <dd>0.002 seconds</dd>
+                            
+                            <dt>Language</dt>
+                            <dd>Python 3.8+</dd>
+                            
+                            <dt>Libraries</dt>
+                            <dd>scikit-learn, NLTK, pandas</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Methodology</h2>
+            
+            <div class="method-grid">
+                <div class="method-card">
+                    <div class="method-icon">📊</div>
+                    <h3>Data Collection</h3>
+                    <p>Collected 928 news articles from the BBC News dataset, split into:</p>
+                    <ul>
+                        <li><strong>Training:</strong> 742 articles (80%)</li>
+                        <li><strong>Testing:</strong> 186 articles (20%)</li>
+                        <li><strong>Sport:</strong> 511 total articles</li>
+                        <li><strong>Politics:</strong> 417 total articles</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">🔧</div>
+                    <h3>Text Preprocessing</h3>
+                    <ul>
+                        <li>Lowercasing all text</li>
+                        <li>Removing special characters</li>
+                        <li>Tokenization using NLTK</li>
+                        <li>Stopword removal</li>
+                        <li>Lemmatization (e.g., "running" → "run")</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">⚙️</div>
+                    <h3>Feature Extraction</h3>
+                    <p>Three different approaches tested:</p>
+                    <ul>
+                        <li><strong>Bag of Words:</strong> Basic word frequency (1000 features)</li>
+                        <li><strong>TF-IDF:</strong> Weighted by importance (1000 features)</li>
+                        <li><strong>N-grams:</strong> Bigrams (1500) and Trigrams (2000)</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">🤖</div>
+                    <h3>Machine Learning Models</h3>
+                    <ul>
+                        <li><strong>Naive Bayes:</strong> Probabilistic classifier</li>
+                        <li><strong>Logistic Regression:</strong> Linear model</li>
+                        <li><strong>SVM:</strong> Maximum margin classifier</li>
+                        <li><strong>Random Forest:</strong> Ensemble method</li>
+                        <li><strong>KNN:</strong> Instance-based learning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pipeline">
+                <h3>Complete Pipeline</h3>
+                <div class="pipeline-steps">
+                    <div class="pipeline-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Data Collection</h4>
+                            <p>Download BBC dataset</p>
+                        </div>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Preprocessing</h4>
+                            <p>Clean & tokenize text</p>
+                        </div>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Feature Extraction</h4>
+                            <p>BOW, TF-IDF, N-grams</p>
+                        </div>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Model Training</h4>
+                            <p>Train 5 classifiers</p>
+                        </div>
+                    </div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Evaluation</h4>
+                            <p>Compare performance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section">
+        <div class="container">
+            <h2 class="section-title">Results & Performance</h2>
+            
+            <div class="result-highlight">
+                <h3>🏆 Best Performing Models</h3>
+                <p class="highlight-desc">11 out of 20 model-feature combinations achieved perfect 100% accuracy</p>
+                
+                <div class="model-cards">
+                    <div class="model-card winner">
+                        <div class="model-badge">Fastest</div>
+                        <h4>Naive Bayes + Bag of Words</h4>
+                        <div class="model-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Accuracy</span>
+                                <span class="metric-value">100%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Training Time</span>
+                                <span class="metric-value">0.003s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">F1-Score</span>
+                                <span class="metric-value">1.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-badge">Recommended</div>
+                        <h4>Logistic Regression + TF-IDF</h4>
+                        <div class="model-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Accuracy</span>
+                                <span class="metric-value">100%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Training Time</span>
+                                <span class="metric-value">0.045s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">F1-Score</span>
+                                <span class="metric-value">1.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-badge">Robust</div>
+                        <h4>SVM + TF-IDF</h4>
+                        <div class="model-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Accuracy</span>
+                                <span class="metric-value">100%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Training Time</span>
+                                <span class="metric-value">0.079s</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">F1-Score</span>
+                                <span class="metric-value">1.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table">
+                <h3>Complete Model Comparison</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature Method</th>
+                                <th>Model</th>
+                                <th>Accuracy</th>
+                                <th>Precision</th>
+                                <th>Recall</th>
+                                <th>F1-Score</th>
+                                <th>Time (s)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="perfect">
+                                <td>TF-IDF</td>
+                                <td>Naive Bayes</td>
+                                <td><strong>100.0%</strong></td>
+                                <td>100.0%</td>
+                                <td>100.0%</td>
+                                <td>1.000</td>
+                                <td>0.002</td>
+                            </tr>
+                            <tr class="perfect">
+                                <td>TF-IDF</td>
+                                <td>Logistic Regression</td>
+                                <td><strong>100.0%</strong></td>
+                                <td>100.0%</td>
+                                <td>100.0%</td>
+                                <td>1.000</td>
+                                <td>0.045</td>
+                            </tr>
+                            <tr class="perfect">
+                                <td>TF-IDF</td>
+                                <td>SVM</td>
+                                <td><strong>100.0%</strong></td>
+                                <td>100.0%</td>
+                                <td>100.0%</td>
+                                <td>1.000</td>
+                                <td>0.079</td>
+                            </tr>
+                            <tr>
+                                <td>TF-IDF</td>
+                                <td>Random Forest</td>
+                                <td>97.85%</td>
+                                <td>97.87%</td>
+                                <td>97.85%</td>
+                                <td>0.979</td>
+                                <td>0.331</td>
+                            </tr>
+                            <tr>
+                                <td>TF-IDF</td>
+                                <td>KNN</td>
+                                <td>99.46%</td>
+                                <td>99.47%</td>
+                                <td>99.46%</td>
+                                <td>0.995</td>
+                                <td>0.004</td>
+                            </tr>
+                            <tr class="perfect">
+                                <td>Bag of Words</td>
+                                <td>Naive Bayes</td>
+                                <td><strong>100.0%</strong></td>
+                                <td>100.0%</td>
+                                <td>100.0%</td>
+                                <td>1.000</td>
+                                <td>0.003</td>
+                            </tr>
+                            <tr>
+                                <td>Bag of Words</td>
+                                <td>Logistic Regression</td>
+                                <td>98.92%</td>
+                                <td>98.95%</td>
+                                <td>98.92%</td>
+                                <td>0.989</td>
+                                <td>0.042</td>
+                            </tr>
+                            <tr>
+                                <td>Bag of Words</td>
+                                <td>KNN</td>
+                                <td>86.56%</td>
+                                <td>89.20%</td>
+                                <td>86.56%</td>
+                                <td>0.861</td>
+                                <td>0.004</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="insights">
+                <h3>Key Insights</h3>
+                <div class="insight-grid">
+                    <div class="insight-card">
+                        <h4>🎯 TF-IDF Superiority</h4>
+                        <p>TF-IDF features enabled three different model types to achieve perfect classification, while Bag of Words achieved this with only Naive Bayes.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>⚡ Speed vs Accuracy</h4>
+                        <p>Naive Bayes achieved 100% accuracy in just 0.002 seconds, making it ideal for real-time applications requiring instant classification.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>📈 N-gram Impact</h4>
+                        <p>Bigrams improved KNN from 99.46% to 100%, but trigrams provided no additional benefit, showing diminishing returns.</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>🔬 Model Consistency</h4>
+                        <p>Average accuracy of 98.82% across all 20 combinations with only 2.98% standard deviation demonstrates robust performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Section -->
+    <section id="code" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Code & Implementation</h2>
+            
+            <div class="code-overview">
+                <h3>Project Structure</h3>
+                <div class="file-tree">
+                    <div class="file-item folder">
+                        <span class="file-icon">📁</span> Sport_vs_Politics_Classifier/
+                    </div>
+                    <div class="file-item file indent-1">
+                        <span class="file-icon">🐍</span> data_collection.py
+                        <span class="file-desc">Downloads BBC dataset</span>
+                    </div>
+                    <div class="file-item file indent-1">
+                        <span class="file-icon">🐍</span> feature_extraction.py
+                        <span class="file-desc">Extracts BOW, TF-IDF, n-grams</span>
+                    </div>
+                    <div class="file-item file indent-1">
+                        <span class="file-icon">🐍</span> model_training.py
+                        <span class="file-desc">Trains all 5 models</span>
+                    </div>
+                    <div class="file-item file indent-1">
+                        <span class="file-icon">🐍</span> evaluation.py
+                        <span class="file-desc">Generates plots and metrics</span>
+                    </div>
+                    <div class="file-item file indent-1">
+                        <span class="file-icon">🐍</span> predict.py
+                        <span class="file-desc">Classify new text</span>
+                    </div>
+                    <div class="file-item file indent-1">
+                        <span class="file-icon">🐍</span> main_pipeline.py
+                        <span class="file-desc">Runs complete pipeline</span>
+                    </div>
+                    <div class="file-item folder indent-1">
+                        <span class="file-icon">📁</span> data/
+                    </div>
+                    <div class="file-item folder indent-1">
+                        <span class="file-icon">📁</span> models/
+                    </div>
+                    <div class="file-item folder indent-1">
+                        <span class="file-icon">📁</span> results/
+                    </div>
+                </div>
+            </div>
+
+            <div class="usage-section">
+                <h3>How to Use</h3>
+                
+                <div class="usage-steps">
+                    <div class="usage-step">
+                        <h4>1. Installation</h4>
+                        <div class="code-block">
+                            <code>git clone https://github.com/WWharf416/B22CS033_Sports_or_Politics.git
+cd B22CS033_Sports_or_Politics
+pip install -r requirements.txt</code>
+                        </div>
+                    </div>
+
+                    <div class="usage-step">
+                        <h4>2. Run Complete Pipeline</h4>
+                        <div class="code-block">
+                            <code>python main_pipeline.py</code>
+                        </div>
+                        <p class="step-desc">This will download data, extract features, train all models, and generate visualizations.</p>
+                    </div>
+
+                    <div class="usage-step">
+                        <h4>3. Make Predictions</h4>
+                        <div class="code-block">
+                            <code>python predict.py</code>
+                        </div>
+                        <p class="step-desc">Interactive mode to classify new articles.</p>
+                    </div>
+
+                    <div class="usage-step">
+                        <h4>4. Or Run Individual Steps</h4>
+                        <div class="code-block">
+                            <code>python data_collection.py      # Get dataset
+python feature_extraction.py   # Extract features  
+python model_training.py       # Train models
+python evaluation.py           # Create plots</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <h3>Usage Example</h3>
+                <div class="code-block">
+                    <code><span class="comment"># Load the best model</span>
+<span class="keyword">from</span> predict <span class="keyword">import</span> TextClassifier
+
+classifier = TextClassifier(
+    model_path=<span class="string">'models/trained/tfidf_unigrams/naive_bayes.pkl'</span>,
+    vectorizer_path=<span class="string">'models/features/tfidf_vectorizer.pkl'</span>
+)
+
+<span class="comment"># Classify a new article</span>
+text = <span class="string">"The team won the championship match with a stunning performance"</span>
+prediction, confidence = classifier.predict(text)
+
+<span class="keyword">print</span>(<span class="string">f"Category: {prediction}"</span>)        <span class="comment"># Output: Sport</span>
+<span class="keyword">print</span>(<span class="string">f"Confidence: {confidence:.2%}"</span>) <span class="comment"># Output: 100%</span></code>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <h3>Technologies Used</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-logo">🐍</div>
+                        <div class="tech-name">Python 3.8+</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-logo">🤖</div>
+                        <div class="tech-name">scikit-learn</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-logo">📊</div>
+                        <div class="tech-name">pandas</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-logo">🔢</div>
+                        <div class="tech-name">NumPy</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-logo">📈</div>
+                        <div class="tech-name">Matplotlib</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-logo">🎨</div>
+                        <div class="tech-name">Seaborn</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-logo">📝</div>
+                        <div class="tech-name">NLTK</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-logo">☁️</div>
+                        <div class="tech-name">WordCloud</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Section -->
+    <section id="report" class="section">
+        <div class="container">
+            <h2 class="section-title">Full Report</h2>
+            
+            <div class="report-container">
+                <div class="report-preview">
+                    <h3>📄 Detailed Project Report</h3>
+                    <p>A comprehensive 11-page report covering the complete methodology, implementation, results, and analysis of this text classification project.</p>
+                    
+                    <div class="report-toc">
+                        <h4>Contents:</h4>
+                        <ul>
+                            <li>1. Introduction & Problem Statement</li>
+                            <li>2. Background & Literature Review</li>
+                            <li>3. Methodology & Data Collection</li>
+                            <li>4. Feature Extraction Techniques</li>
+                            <li>5. Machine Learning Models</li>
+                            <li>6. Experimental Results</li>
+                            <li>7. Discussion & Analysis</li>
+                            <li>8. Conclusions & Future Work</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="report-buttons">
+                        <a href="Sport_v_Pol.pdf" class="btn btn-primary" download>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download PDF Report
+                        </a>
+                        <a href="Sport_v_Pol.pdf" class="btn btn-secondary" target="_blank">
+                            View Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Project</h4>
+                    <p>Sport vs Politics Text Classification using Machine Learning</p>
+                    <p class="footer-author">Maulik Desai | B22CS033</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/WWharf416/B22CS033_Sports_or_Politics" target="_blank">GitHub Repository</a></li>
+                        <li><a href="Sport_v_Pol.pdf" download>Download Report</a></li>
+                        <li><a href="#overview">Project Overview</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>GitHub: <a href="https://github.com/WWharf416" target="_blank">@WWharf416</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Maulik Desai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
